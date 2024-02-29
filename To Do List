@@ -1,0 +1,23 @@
+import datetime
+todo_list={}
+while True:
+  print("""TODO List Managment System
+  1: Create
+  2: Update
+  3: Track""")
+  user_choice=input("Enter the menu number: ")
+  if user_choice=='1':
+    task_name=input("Create the task: ")
+    due_date=int(input("Enter the due date: "))
+    todo_list[task_name]=due_date
+    print(todo_list)
+
+  elif user_choice=='2':
+    update_task_name=input("What do you want to update: ")
+    updated_due_date=int(input("Enter the updated due date: "))
+    todo_list[update_task_name]=[updated_due_date]
+    print(todo_list)
+  
+  elif user_choice=='3':
+    print("Your TODO list is: ")
+    print(todo_list)
