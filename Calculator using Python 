@@ -1,0 +1,13 @@
+first_number=int(input("Enter your first Number:"))
+second_number=int(input("Enter your second Number:"))
+operator=input("Enter your operator:")
+if(operator=='+'):
+  print("Sum of two number is:",first_number + second_number)
+elif(operator=='-'):
+  print("Subtraction of two number is:",first_number - second_number)
+elif(operator=='*'):
+  print("Multiplication of two number is:",first_number * second_number)
+elif(operator=='/'):
+  print("Division of two number is:",first_number / second_number)
+else:
+  print("Invalid operator")
