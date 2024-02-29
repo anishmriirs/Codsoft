@@ -1,0 +1,61 @@
+contact_book={}
+print("""
+1: Add Contact
+2: View Contact List
+3: Search Contact 
+4: Update Contact 
+5: Delete Contact""")
+
+while True:
+  user_choice=int(input("Enter your choice:"))
+  if user_choice==1:
+    name=input("Enter name:")
+    phone=int(input("Enter phone number:"))
+    email=input("Enter email:")
+    address=input("Enter address:")
+    contact_book[name]=[phone,email,address]
+    print("Contact Added")
+  
+  elif user_choice==2:
+    print("Contact List",contact_book)
+  
+  elif user_choice==3:
+    search_name=input("Enter name to search:")
+    if search_name in contact_book:
+      print("Contact Found" ,contact_book[search_name])
+    else:
+      print("Contact Not Found")
+  
+  elif user_choice==4:
+    name=input("Enter name to update:")
+    if name in contact_book:
+      print(contact_book[name])
+      print("""
+      1: Update Phone Number
+      2: Update Email
+      3: Update Address""")
+      update_choice=int(input("Enter your choice:"))
+      if update_choice==1:
+        new_phone=int(input("Enter new phone number:"))
+        contact_book[name]=[new_phone]
+      elif update_choice==2:
+        new_email=input("Enter new email:")
+        contact_book[name]=[new_email]
+      elif update_choice==3:
+        new_address=input("Enter new address:")
+        contact_book[name]=[new_address]
+      else:
+        break
+      print("Contact Updated")
+    else:
+      print("Contact Not Found")
+  
+  elif user_choice==5:
+    delete_choice=input("Enter name to delete:")
+    if delete_choice in contact_book:
+      del contact_book[delete_choice]
+      print("Contact Deleted")
+    else:
+      print("Contact Not Found")
+  else:
+    break
